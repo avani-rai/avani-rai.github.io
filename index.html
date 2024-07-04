@@ -53,9 +53,9 @@
                         <li class="menuItem"><a href="#aboutus">About Me</a></li>
                         <!--<li class="menuItem"><a href="#skillset">Skills</a></li>
                         <li class="menuItem"><a href="#experience">Experience</a></li>
-                        <li class="menuItem"><a href="#education">Education</a></li>
+                        <li class="menuItem"><a href="#education">Education</a></li>-->
                         <li class="menuItem"><a href="#ourwork">Portfolio</a></li>
-                        <li class="menuItem"><a href="#contact">Contact</a></li>-->
+                        <!--<li class="menuItem"><a href="#contact">Contact</a></li>-->
                       </ul>
                     </div>
                 </div>
@@ -112,10 +112,192 @@
     Download Printable Resume
   </a>
 </p>
+</div>
+      	
+</div>     
+</div>    
+</section>
 
 
+<!--portfolio start-->
+<section class="protfolio" id="ourwork">
+  <div class="container">
+    <div class="heading">
+        <h2>Portfolio</h2>
+        <h3>Some of my projects and many more on the way...</h3>            
+    </div>
+  </div>
+  <div class="row">
+  <div class="portfolioFilter">
+    <ul>
+      <li><a href="#" data-filter="*" class="current">All</a></li>
+      <li><a href="#" data-filter=".aiml">AI&ML</a></li>
+      
+      <li class="last"><a href="#" data-filter=".webdesign">WebApp</a></li>
+    </ul>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var links = document.querySelectorAll('.lb_warsaw1');
+      links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+    
+          var lightbox = document.createElement('div');
+          lightbox.style.position = 'fixed';
+          lightbox.style.top = '0';
+          lightbox.style.left = '0';
+          lightbox.style.width = '100%';
+          lightbox.style.height = '100%';
+          lightbox.style.backgroundColor = 'rgba(0,0,0,0.8)';
+          lightbox.style.display = 'flex';
+          lightbox.style.flexDirection = 'column';
+          lightbox.style.alignItems = 'center';
+          lightbox.style.justifyContent = 'center';
+          lightbox.style.zIndex = '9999';
+    
+          var content = document.createElement('div');
+          content.style.color = 'white';
+          content.style.maxWidth = '80%';
+          content.style.maxHeight = '80%';
+          content.style.overflow = 'auto';
+          content.style.textAlign = 'center';
+    
+          var img = document.createElement('img');
+          img.src = this.getAttribute('data-imgsrc');
+          img.style.maxWidth = '100%';
+          img.style.maxHeight = '50vh';
+          img.style.marginBottom = '20px';
+    
+          var title = document.createElement('h2');
+          title.textContent = this.getAttribute('data-title');
+          title.style.color = 'white'; // Set the same color as description
+    
+          var description = document.createElement('p');
+          description.textContent = this.getAttribute('data-description');
+          description.style.color = 'white'; // Set the same color as title
+    
+          var links = document.createElement('div');
+          links.style.marginTop = '20px';
+    
+          var githubLink = document.createElement('a');
+          githubLink.href = this.getAttribute('data-github');
+          githubLink.target = '_blank';
+          githubLink.textContent = 'GitHub';
+          githubLink.style.color = 'white';
+          githubLink.style.marginRight = '20px';
+          links.appendChild(githubLink);
+    
+          // Conditionally add the website link if it exists
+          var websiteURL = this.getAttribute('data-website');
+          if (websiteURL) {
+            var websiteLink = document.createElement('a');
+            websiteLink.href = websiteURL;
+            websiteLink.target = '_blank';
+            websiteLink.textContent = 'Website';
+            websiteLink.style.color = 'white';
+            links.appendChild(websiteLink);
+          }
+    
+          content.appendChild(img);
+          content.appendChild(title);
+          content.appendChild(description);
+          content.appendChild(links);
+    
+          lightbox.appendChild(content);
+    
+          lightbox.addEventListener('click', function() {
+            document.body.removeChild(lightbox);
+          });
+    
+          document.body.appendChild(lightbox);
+        });
+    
+        link.addEventListener('mouseover', function() {
+          this.setAttribute('title', this.getAttribute('data-hover-title'));
+        });
+        link.addEventListener('mouseout', function() {
+          this.removeAttribute('title');
+        });
+      });
+    });
+    </script>
+    
+    
 
 
+   
+
+  <ul class="portfolioContainer row">
+    <li class="webdesign col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="lightCon">
+        <span class="hoverBox">
+          <span class="smallIcon">
+            <h3 class="project-title">ColorVista : An aid for      color vision deficiencies </h3>
+            <a data-imgsrc="images\Screenshot 2024-07-04 225651.png" 
+               data-title="ColorVista"
+               data-description="A website designed for color vision deficiency solutions, including features like color blindness testing, color correction algorithms and visual simulation tools."
+               data-github="https://github.com/avani-rai/ColorVista/tree/main"
+               data-website="https://khushi121004.github.io/ColorVista/index.html"
+               data-hover-title="Project description"
+               class="zoom lb lb_warsaw1">
+              <i class="fa fa-plus fa-2x"></i>
+            </a>
+          </span>
+        </span>
+        <img src="images\Screenshot 2024-07-04 225651.png" alt="" >
+      </div>
+    </li>
+
+  <li class="webdesign aiml col-xs-6 col-sm-3 col-md-3 col-lg-3">
+    <div class="lightCon">
+      <span class="hoverBox">
+        <span class="smallIcon">
+          <h3 class="project-title">Face Recognition & Identification</h3>
+          <a data-imgsrc="images\Screenshot 2024-07-04 212546.png" 
+             data-title="Face Recognition and Identification" 
+             data-description="A project centering around optimization of face identification and recognition leveraging HoG, LBP and CNN methods for feature extraction and implemented ML models including ANN, SVM, decision trees etc. for comparison."
+             data-github="https://github.com/avani-rai/Face_Recognition_PRML/tree/main"
+             data-website="https://adityarathor007.github.io/Face_Recognition/"
+             data-hover-title="Project description"
+             class="zoom lb lb_warsaw1">
+            <i class="fa fa-plus fa-2x"></i>
+          </a>
+        </span>
+      </span>
+      <img src="images\Screenshot 2024-07-04 212546.png" alt="" >
+    </div>
+  </li>
+
+
+  <li class=" aiml col-xs-6 col-sm-3 col-md-3 col-lg-3">
+    <div class="lightCon">
+      <span class="hoverBox">
+        <span class="smallIcon">
+          <h3 class="project-title">Human Phenotype Classification</h3>
+          <a data-imgsrc="images\Screenshot 2024-07-04 225613.png" 
+             data-title="Human Phenotype Classification"
+             data-description=" An Ayurvedic human phenotype classification system using computer vision and deep learning"
+             data-github="https://github.com/avani-rai/Prakriti-human-phenotype-"
+             
+             data-hover-title="Project description"
+             class="zoom lb lb_warsaw1">
+            <i class="fa fa-plus fa-2x"></i>
+          </a>
+        </span>
+      </span>
+      <img src="images\Screenshot 2024-07-04 225613.png" alt="" >
+    </div>
+  </li>
+
+
+  
+
+    
+  </ul>
+  </div>
+  </section>
+  <!--portfolio end-->   
 
 
 
